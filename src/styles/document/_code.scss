@@ -1,0 +1,27 @@
+// Code colours. Hugo highlighted with Chroma's "monokai" style, written inline on each <pre>
+// (color #f8f8f2, background #272822). Pattern Dump highlights with Shiki and colours each token kind from a
+// custom property (--pd-code-<kind>); these are the Monokai values for those kinds. Shiki and Chroma split
+// tokens differently, so a few tokens differ in colour from the Hugo site.
+:root {
+  --pd-code-text: #f8f8f2;
+  --pd-code-comment: #75715e;
+  --pd-code-string: #e6db74;
+  --pd-code-keyword: #f92672;
+  --pd-code-storage: #66d9ef;
+  --pd-code-constant: #ae81ff;
+  --pd-code-value: #66d9ef;
+  --pd-code-tag: #f92672;
+  --pd-code-attribute: #a6e22e;
+  --pd-code-function: #a6e22e;
+  --pd-code-support: #66d9ef;
+  --pd-code-property: #f92672;
+  --pd-code-parameter: #fd971f;
+  --pd-code-expression: #f8f8f2;
+}
+
+pre.shiki {
+  color-scheme: dark;
+  color: #f8f8f2;
+  background-color: #272822;
+  tab-size: 4;
+}

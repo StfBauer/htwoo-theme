@@ -1,0 +1,5 @@
+// The workbench's preview theme. The site's colours are the skin's own (src/styles/base/_tokens.scss);
+// this theme only names the light scheme the site is drawn in, so previews and live examples match it.
+[data-theme="htwoo"] {
+  color-scheme: light;
+}

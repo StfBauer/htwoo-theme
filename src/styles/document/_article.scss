@@ -1,5 +1,4 @@
-@use '../../01-atoms/typography' as typo;
-@use '../../00-base/_design-token.vars.scss' as dt;
+@use './type-scale' as typo;
 
 
 %background-clip {
@@ -107,6 +106,9 @@
 	}
 	figure, 
 	img{
+		// Pattern Dump writes width and height on every <img>; height: auto keeps the aspect ratio when
+		// max-width shrinks it (Hugo wrote no size attributes).
+		height: auto;
 		border-radius: 1rem;
 		grid-column: 1 / span 5;
 		max-width: 100%;

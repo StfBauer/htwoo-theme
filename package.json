@@ -1,0 +1,61 @@
+{
+  "name": "@n8d/htwoo-theme",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The htwoo.io website's skin: layouts, partials and components as a Pattern Dump pattern package.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build:helpers": "esbuild helpers/index.ts --bundle --platform=node --format=esm --outfile=dist/helpers.js",
+    "watch:helpers": "esbuild helpers/index.ts --bundle --platform=node --format=esm --outfile=dist/helpers.js --watch",
+    "prepare": "npm run build:helpers",
+    "dev": "npm run build:helpers && pd dev",
+    "build": "npm run build:helpers && pd build",
+    "audit": "npm run build:helpers && pd audit",
+    "typecheck": "tsc --noEmit"
+  },
+  "files": [
+    "src",
+    "themes",
+    "assets",
+    "site-root",
+    "dist/helpers.js"
+  ],
+  "patternDump": {
+    "patterns": "src/patterns",
+    "styles": {
+      "dir": "src/styles",
+      "documentBase": [
+        "document"
+      ]
+    },
+    "themes": {
+      "dir": "themes",
+      "default": "htwoo",
+      "switch": "attribute"
+    },
+    "scripts": "src/scripts",
+    "helpers": "dist/helpers.js",
+    "assets": [
+      "assets/htwoo-theme"
+    ]
+  },
+  "dependencies": {
+    "@swup/a11y-plugin": "5.0.0",
+    "@swup/head-plugin": "2.3.1",
+    "swup": "4.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "esbuild": "0.28.2",
+    "pattern-dump": "0.9.0",
+    "typescript": "5.9.3"
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "@parcel/watcher": true
+  }
+}

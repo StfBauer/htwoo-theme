@@ -1,21 +1,10 @@
 import Swup from 'swup';
 import SwupA11yPlugin from '@swup/a11y-plugin';
-// import { GitHub } from '../github/github.js';
-
-// const gh = new GitHub();
-// gh.testRepo();
-
-// const dosomething = async () => {
-//     let startgazers = await gh.starGazer();
-//     let mainContent = document.querySelector('.main-content');
-
-//     mainContent.appendChild(startgazers);
-// }
-// gh.contributors();
-
-// dosomething();
+// Pattern Dump links each page's own stylesheets and scripts (Hugo linked one bundle on every page), so a
+// swup transition must bring the next page's <head> along: the head plugin swaps the changed tags.
+import SwupHeadPlugin from '@swup/head-plugin';
 new Swup({
-    plugins: [new SwupA11yPlugin()]
+    plugins: [new SwupA11yPlugin(), new SwupHeadPlugin({ awaitAssets: true })]
 });
 
 const toggleMenu = (event) => {
