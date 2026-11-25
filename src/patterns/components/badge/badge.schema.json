@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Badge",
+  "description": "A small status image from another site (such as shields.io), with its size, so the page doesn't shift while it loads. Optionally a link.",
+  "type": "object",
+  "required": ["src", "alt", "width", "height"],
+  "properties": {
+    "src": { "type": "string", "description": "The badge's address, loaded from its own site" },
+    "alt": { "type": "string", "description": "The badge's text alternative" },
+    "width": { "type": "integer", "description": "Its width in CSS pixels, as the image declares it" },
+    "height": { "type": "integer", "description": "Its height in CSS pixels" },
+    "link": { "type": "string", "description": "Where the badge links to, if anywhere" }
+  }
+}
