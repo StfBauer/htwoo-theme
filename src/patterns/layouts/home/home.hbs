@@ -1,0 +1,7 @@
+{{#> partials-base }}
+{{> components-cover image=coverImage alt=coverAlt title=coverTitle subtitle=coverSubtitle }}
+<div class="t-general landing">
+    {{{body}}}
+    {{#if site.supporters.length}}{{> "components-supporters~quick" supporters=site.supporters }}{{/if}}
+</div>
+{{/partials-base}}

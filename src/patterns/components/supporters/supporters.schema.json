@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Supporters",
+  "description": "The supporters' logos in a grid: the full list (supporters page) or, as the quick variant, under a \"Supported by:\" heading (home page).",
+  "type": "object",
+  "required": ["supporters"],
+  "properties": {
+    "supporters": {
+      "type": "array",
+      "description": "The supporters in order, each as components/supporter takes it",
+      "items": { "x-pd-component": "components/supporter" }
+    }
+  }
+}

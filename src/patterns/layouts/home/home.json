@@ -1,0 +1,60 @@
+{
+  "title": "Why hTWOo is better than Fluent UI Web",
+  "description": "The site description.",
+  "coverImage": "/assets/htwoo-theme/samples/cover.jpg",
+  "coverAlt": "A colour gradient",
+  "coverTitle": "Welcome to hTWOo",
+  "coverSubtitle": "Fluent Design for everyone and Microsoft 365 Applications",
+  "body": "<h2 id=\"why-htwoo\">Why hTWOo?</h2>\n<p>A paragraph of the landing text, with <a href=\"https://atomicdesign.bradfrost.com/chapter-2/\">a link</a>.</p>\n<blockquote><p><strong>A quote in bold.</strong> The rest of it.</p><p>Its source.</p></blockquote>\n<p>Engage with <a href=\"https://github.com/n8design/htwoo\">hTWOo UI on Github</a></p>",
+  "site": {
+    "title": "hTWOo",
+    "navigations": {
+      "main": [
+        {
+          "label": "Introduction",
+          "route": "/",
+          "current": true
+        },
+        {
+          "label": "Getting Started",
+          "route": "/getting-started/"
+        },
+        {
+          "label": "Flavors",
+          "ancestor": false,
+          "children": [
+            {
+              "label": "hTWOo Core",
+              "href": "/htwoo-core/"
+            },
+            {
+              "label": "hTWOo React",
+              "href": "/htwoo-react/"
+            }
+          ]
+        },
+        {
+          "label": "Samples",
+          "href": "https://github.com/n8design/htwoo-samples/"
+        }
+      ]
+    },
+    "supporters": [
+      {
+        "name": "A supporter",
+        "logo": "/assets/htwoo-theme/samples/logo.svg",
+        "link": "https://example.com/"
+      },
+      {
+        "name": "Another supporter",
+        "logo": "/assets/htwoo-theme/samples/logo.svg",
+        "link": "https://example.com/"
+      },
+      {
+        "name": "A third supporter",
+        "logo": "/assets/htwoo-theme/samples/logo.svg",
+        "link": "https://example.com/"
+      }
+    ]
+  }
+}
