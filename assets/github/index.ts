@@ -1,1 +1,0 @@
-export GitHub = require('github');
