@@ -21,7 +21,8 @@
 	}
 ;
 }
-// {{pd-image}} writes the <img> and takes no class: Hugo's .o-cover-img is the cover's image.
+// PD-WORKAROUND: F-27. {{pd-image}} writes the <img> and takes no class, so Hugo's .o-cover-img is
+// selected as the cover's image.
 .o-cover img{
 	position: sticky;
 
