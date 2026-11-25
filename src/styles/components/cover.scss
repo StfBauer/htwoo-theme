@@ -1,4 +1,5 @@
-@use "../01-atoms/typography" as typo;
+// The cover (components/cover). Formerly 03-organism/_cover.scss.
+@use "../document/type-scale" as typo;
 
 .o-cover{
 	position: relative;
@@ -20,7 +21,8 @@
 	}
 ;
 }
-.o-cover-img{
+// {{pd-image}} writes the <img> and takes no class: Hugo's .o-cover-img is the cover's image.
+.o-cover img{
 	position: sticky;
 
 	height: auto;

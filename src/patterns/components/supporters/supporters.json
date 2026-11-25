@@ -1,0 +1,19 @@
+{
+  "supporters": [
+    {
+      "name": "A supporter",
+      "logo": "/assets/htwoo-theme/samples/logo.svg",
+      "link": "https://example.com/"
+    },
+    {
+      "name": "Another supporter",
+      "logo": "/assets/htwoo-theme/samples/logo.svg",
+      "link": "https://example.com/"
+    },
+    {
+      "name": "A third supporter",
+      "logo": "/assets/htwoo-theme/samples/logo.svg",
+      "link": "https://example.com/"
+    }
+  ]
+}

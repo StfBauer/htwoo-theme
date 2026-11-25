@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Supporter",
+  "description": "One supporter: its logo, linked to its site.",
+  "type": "object",
+  "required": ["name", "logo", "link"],
+  "properties": {
+    "name": { "type": "string", "description": "The supporter's name: the link's accessible name (the logo is an inlined SVG)" },
+    "logo": { "type": "string", "description": "The logo, an .svg asset, inlined: /assets/<folder>/<file>.svg" },
+    "link": { "type": "string", "description": "The supporter's site" }
+  }
+}
