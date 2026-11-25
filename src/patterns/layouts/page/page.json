@@ -1,0 +1,46 @@
+{
+  "title": "Getting started",
+  "description": "How to add hTWOo to a project.",
+  "body": "<h2 id=\"a-section\">A section</h2>\n<p>A paragraph of the page, with <a href=\"/getting-started/\">a link</a> and <code>inline code</code>.</p>\n<ul><li>A list item, <a href=\"/concepts/\">with a link</a></li><li>Another item</li></ul>\n<h3 id=\"a-subsection\">A subsection</h3>\n<blockquote><p><strong>A quote.</strong> Its text in italics.</p></blockquote>\n<div class=\"shiki-container\"><pre class=\"shiki\" tabindex=\"0\"><code><span class=\"line\"><span class=\"pd-code-tag\">&lt;button</span> <span class=\"pd-code-attribute\">class</span>=<span class=\"pd-code-string\">&quot;hoo-button-primary&quot;</span><span class=\"pd-code-tag\">&gt;</span>Save<span class=\"pd-code-tag\">&lt;/button&gt;</span></span></code></pre></div>",
+  "site": {
+    "title": "hTWOo",
+    "navigations": {
+      "main": [
+        {
+          "label": "Introduction",
+          "route": "/",
+          "current": true
+        },
+        {
+          "label": "Getting Started",
+          "route": "/getting-started/"
+        },
+        {
+          "label": "Flavors",
+          "ancestor": false,
+          "children": [
+            {
+              "label": "hTWOo Core",
+              "href": "/htwoo-core/"
+            },
+            {
+              "label": "hTWOo React",
+              "href": "/htwoo-react/"
+            }
+          ]
+        },
+        {
+          "label": "Samples",
+          "href": "https://github.com/n8design/htwoo-samples/"
+        }
+      ]
+    },
+    "supporters": [
+      {
+        "name": "A supporter",
+        "logo": "/assets/htwoo-theme/htwoo-logo.svg",
+        "link": "https://example.com/"
+      }
+    ]
+  }
+}
