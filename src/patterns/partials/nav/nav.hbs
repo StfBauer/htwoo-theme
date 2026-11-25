@@ -1,0 +1,25 @@
+<button class="menu-toggle" id="ham-menu" aria-expanded="false" aria-haspopup="true" aria-controls="ham">
+    <svg id="i5" class="icon" viewBox="0 0 100 100" style="display: none;">
+        <path id="top-line-5" d="M50,40 L70,60" style="opacity: 1;"></path>
+        <path id="middle-line-5" d="M129.99999999999997,50 L169.99999999999997,50 Z" style="opacity: -0.176471;"></path>
+        <path id="bottom-line-5" d="M30,60 L50,40" style="opacity: 1;"></path>
+    </svg>
+    <span>&#10507; Menu &#10507;</span></button>
+<menu class="menu-main" id="ham">
+{{#each site.navigations.main}}
+    <li class="menu-item{{#if current}} active{{/if}}"{{#if current}} aria-current="page"{{/if}}>
+        {{#if route}}<a class="menu-link" href="{{route}}">{{label}}</a>
+        {{else if href}}<a class="menu-link" href="{{href}}"{{#if (hoo-is-external href)}} target="_blank" rel="noopener"{{/if}}>{{label}}</a>
+        {{else}}<span class="menu-link">{{label}}</span>{{/if}}
+        {{#if children.length}}
+        <menu class="menu-sub">
+            {{#each children}}
+            <li class="menu-item{{#if current}} active{{/if}}"{{#if current}} aria-current="page"{{/if}}>
+                <a href="{{#if route}}{{route}}{{else}}{{href}}{{/if}}" class="menu-link">{{label}}</a>
+            </li>
+            {{/each}}
+        </menu>
+        {{/if}}
+    </li>
+{{/each}}
+</menu>

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Navigation",
+  "type": "object",
+  "properties": {
+    "site": { "type": "object", "description": "site.globals: navigations.main, the entries as Pattern Dump resolves them for the page ({ label, route | href, current?, ancestor?, children? })" }
+  }
+}
