@@ -1,5 +1,6 @@
 // Code blocks. Hugo: div.highlight > pre; Pattern Dump: div.shiki-container > pre.shiki.
 .shiki-container{
+    position: relative;
     font-size: clamp(0.8rem, 13.1830985915px + .5633802817vw, 1rem);
     width: auto;
     margin: auto;
@@ -10,6 +11,36 @@
         padding-right: 3rem;
         border-radius: 1rem;
         overflow: auto;
+    }
+}
+
+// Pattern Dump's copy button (button.copy-btn, the code block's first child; a page script adds it where
+// the browser can copy): quiet text in the block's top-right corner, inside the pre's right padding.
+.shiki-container .copy-btn{
+    position: absolute;
+    top: .5rem;
+    right: .75rem;
+    padding: .25em;
+    font: inherit;
+    font-size: .75rem;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: var(--pd-code-text);
+    opacity: .7;
+    background: none;
+    border: 0;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible{
+        opacity: 1;
+        text-decoration: underline;
+    }
+
+    // The theme's --c-p2-60, 3.95:1 on the block's ground (--c-p2-00 would be 2.64:1).
+    &:focus-visible{
+        outline: .125rem solid var(--c-p2-60);
+        outline-offset: .125rem;
     }
 }
 
