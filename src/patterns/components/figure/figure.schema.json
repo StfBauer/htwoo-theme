@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Figure",
+  "description": "An image with a caption that can hold links, placed in a page with <pd-components-figure>.",
+  "type": "object",
+  "x-pd-content": "caption",
+  "required": ["src", "alt"],
+  "properties": {
+    "src": {
+      "type": "string",
+      "description": "The image, a raster file in the assets",
+      "x-pd-image": { "widths": [480, 960, 1440], "sizes": "(min-width: 1025px) calc(100vw - 20rem), 100vw" }
+    },
+    "alt": { "type": "string", "description": "The image's text alternative" },
+    "caption": { "type": "string", "contentMediaType": "text/markdown", "description": "The caption, markdown: the text inside the tag" }
+  }
+}
