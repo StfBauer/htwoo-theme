@@ -118,8 +118,14 @@
 		border-radius: 1rem;
 		grid-column: 1 / span 5;
 		max-width: 100%;
-		width: auto;
 		margin-inline: auto;
+	}
+	// Only the figure is width: auto. An image keeps the width Pattern Dump writes as its attribute:
+	// sizes="auto, …" on lazy images is resolved from the image's laid-out width, and with width: auto
+	// it falls back to 300px. Capped by max-width, the image is its own width, as Hugo's were at their
+	// natural size.
+	figure{
+		width: auto;
 	}
 
 }
