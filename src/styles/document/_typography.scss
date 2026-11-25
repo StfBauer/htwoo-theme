@@ -6,6 +6,8 @@
     margin: auto;
     margin-block: 2em 3em;
     pre{
+        // The browser's 1em, written out: the copy button below is placed from it.
+        margin-block: 1rem;
         box-sizing: border-box;
         padding: 1rem 1.5rem;
         padding-right: 3rem;
@@ -15,12 +17,18 @@
 }
 
 // Pattern Dump's copy button (button.copy-btn, the code block's first child; a page script adds it where
-// the browser can copy): quiet text in the block's top-right corner, inside the pre's right padding.
+// the browser can copy): quiet text in the block's top-right corner. A block with the button gets a
+// taller top padding, so the button keeps clear of the first line at any width and text size.
+.shiki-container:has(> .copy-btn) pre{
+    padding-top: 2.25rem;
+}
 .shiki-container .copy-btn{
     position: absolute;
-    top: .5rem;
+    // the pre's 1rem margin, then .625rem into the block
+    top: 1.625rem;
     right: .75rem;
-    padding: .25em;
+    padding: 0 .25em;
+    line-height: 1;
     font: inherit;
     font-size: .75rem;
     letter-spacing: .05em;
