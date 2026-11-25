@@ -1,0 +1,48 @@
+{
+  "title": "How-toes",
+  "body": "",
+  "site": {
+    "title": "hTWOo",
+    "navigations": {
+      "main": [
+        {
+          "label": "Introduction",
+          "route": "/",
+          "current": true
+        },
+        {
+          "label": "Getting Started",
+          "route": "/getting-started/"
+        },
+        {
+          "label": "Flavors",
+          "ancestor": false,
+          "children": [
+            {
+              "label": "hTWOo Core",
+              "href": "/htwoo-core/"
+            },
+            {
+              "label": "hTWOo React",
+              "href": "/htwoo-react/"
+            }
+          ]
+        },
+        {
+          "label": "Samples",
+          "href": "https://github.com/n8design/htwoo-samples/"
+        }
+      ]
+    },
+    "supporters": [
+      {
+        "name": "A supporter",
+        "logo": "/assets/htwoo-theme/htwoo-logo.svg",
+        "link": "https://example.com/"
+      }
+    ]
+  },
+  "page": {
+    "listing": "<ul>\n<li><a href=\"/how-to/svg-instead-of-icon-fonts/\">SVG instead of icon fonts</a></li>\n<li><a href=\"/how-to/how-to-spfx-html/\">Use hTWOo Core in your No-Framework SPFx web part</a></li>\n</ul>"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "List card",
+  "description": "One page of a listing as the list view shows it: its title, linked.",
+  "type": "object",
+  "required": ["route", "title"],
+  "properties": {
+    "route": { "type": "string", "description": "The page's address" },
+    "title": { "type": "string", "description": "The page's title, as the link" }
+  }
+}

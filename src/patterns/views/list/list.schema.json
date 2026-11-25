@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "List",
+  "description": "A listing as a plain list of links, one per page.",
+  "type": "object",
+  "properties": {
+    "entries": { "type": "array", "x-pd-card": "components/list-card", "description": "The pages of the listing, in its order" }
+  }
+}
