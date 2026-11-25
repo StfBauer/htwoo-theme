@@ -98,6 +98,12 @@
 	figure{
 		margin-inline: 0;
 	}
+	// Pattern Dump writes a markdown image that has a title, on a line of its own, as
+	// <figure class="doc-figure"> (Hugo wrote <p><img>). The figure takes the column's width as that
+	// paragraph did; with width: auto it would shrink to its caption, and the image with it.
+	.doc-figure{
+		width: 100%;
+	}
 	figcaption{
 		p{
 			margin: 0;
