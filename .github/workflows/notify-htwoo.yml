@@ -5,7 +5,7 @@ name: Notify htwoo
 
 on:
   push:
-    branches: [main]
+    branches: [pd]
 
 # In order. htwoo pins the newest theme commit either way.
 concurrency:
@@ -22,7 +22,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.HTWOO_DISPATCH_TOKEN }}
           HTWOO_REPO: ${{ github.repository_owner }}/htwoo
-          HTWOO_REF: main
+          HTWOO_REF: pd-migration
         run: >-
           gh workflow run deploy.yml --repo "$HTWOO_REPO" --ref "$HTWOO_REF"
           -f bump-theme=true -f theme-sha="$GITHUB_SHA"
