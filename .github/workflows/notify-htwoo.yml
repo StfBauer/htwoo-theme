@@ -1,0 +1,28 @@
+# Tells htwoo that the theme changed. htwoo's deploy workflow then pins the theme submodule to this branch's
+# newest commit (the bump commit) and deploys htwoo.io.
+# Secret HTWOO_DISPATCH_TOKEN: a token that may run workflows in htwoo (fine-grained: Actions, read and write).
+name: Notify htwoo
+
+on:
+  push:
+    branches: [main]
+
+# In order. htwoo pins the newest theme commit either way.
+concurrency:
+  group: notify-htwoo
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run htwoo's deploy workflow with the theme bump
+        env:
+          GH_TOKEN: ${{ secrets.HTWOO_DISPATCH_TOKEN }}
+          HTWOO_REPO: ${{ github.repository_owner }}/htwoo
+          HTWOO_REF: main
+        run: >-
+          gh workflow run deploy.yml --repo "$HTWOO_REPO" --ref "$HTWOO_REF"
+          -f bump-theme=true -f theme-sha="$GITHUB_SHA"
