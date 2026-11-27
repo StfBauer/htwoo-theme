@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Listing",
+  "description": "A folder's index.md: its title and text, then the folder's pages as a list of links.",
+  "type": "object",
+  "required": ["title"],
+  "properties": {
+    "title": { "type": "string", "description": "The listing's heading, and its title in the navigation" },
+    "description": { "type": "string", "description": "The page's description for search results and link previews" },
+    "page": {
+      "type": "object",
+      "description": "What Pattern Dump works out for the page",
+      "properties": {
+        "listing": { "description": "The folder's pages, in the list view unless the index.md names another view", "x-pd-view": "list" }
+      }
+    }
+  }
+}

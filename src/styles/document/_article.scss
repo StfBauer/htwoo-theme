@@ -1,0 +1,131 @@
+@use './type-scale' as typo;
+
+
+%background-clip {
+
+	background: linear-gradient(var(--deg, 45deg), #024b5e 0%, #024b5e 40%, #03adbd 100%);
+	background-size: 125%;
+	background-repeat: no-repeat;
+	color: transparent;
+	background-clip: text;
+	-webkit-background-clip: text;
+
+	text-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+
+}
+
+.t-general {
+
+	display: grid;
+	font-size: typo.$p;
+	grid-template-columns: repeat(5, 1fr);
+	// font-size: clamp(1, 2vw, 3vw);
+
+	padding: clamp(32px, 2vw, 48px);
+	padding-top: 0;
+
+	margin-block: 3vw;
+	margin-top: 7rem;
+	margin-inline: auto;
+	margin-right:  max(2rem, 3vw);
+	// max-width: 100ch;
+	line-height: 1.618;
+
+	margin-bottom: 5vw;
+	@media screen and (max-width: 1440px) {
+		grid-template-columns: repeat(2, 1fr);
+		padding: clamp(8px, 2vw, 24px);
+	}
+	@media screen and (max-width: 960px) {
+		margin-top: 1rem;
+    }
+
+
+
+	&>*{
+		grid-column: 2 / span 3;
+		width: 100%;
+		box-sizing: border-box;
+		@media screen and (max-width: 1440px) {
+			grid-column: 1 / span 2;
+		}
+	}
+
+	h1 {
+		font-size: typo.$h1;
+		line-height: .9;
+		font-weight: 900;
+		text-transform: uppercase;
+		margin-inline: auto;
+		margin-top: 0;
+		--deg: 45deg;
+		@extend %background-clip;
+	}
+
+	h2 {
+		font-size: typo.$h2;
+		line-height: 1;
+		font-weight: 900;
+		text-transform: uppercase;
+		margin-inline: auto;
+		--deg: 215deg;
+		@extend %background-clip;
+	}
+
+	h3 {
+		font-size: typo.$h3;
+		text-transform: uppercase;
+		margin-inline: auto;
+		--deg: 305deg;
+		@extend %background-clip;
+	}
+
+	h4 {
+		margin-inline: auto;
+		--deg: 305deg;
+		@extend %background-clip;
+	}
+
+	p {
+		margin-inline: auto;
+	}
+
+	ul {
+		margin-inline: auto;
+		box-sizing: border-box;
+	}
+
+	figure{
+		margin-inline: 0;
+	}
+	// Pattern Dump writes a markdown image that has a title, on a line of its own, as
+	// <figure class="doc-figure"> (Hugo wrote <p><img>). The figure takes the column's width as that
+	// paragraph did; with width: auto it would shrink to its caption, and the image with it.
+	.doc-figure{
+		width: 100%;
+	}
+	figcaption{
+		p{
+			margin: 0;
+			text-align: right;
+		}
+	}
+	figure, 
+	img{
+		// Pattern Dump writes width and height on every <img>; height: auto keeps the aspect ratio when
+		// max-width shrinks it (Hugo wrote no size attributes).
+		height: auto;
+		border-radius: 1rem;
+		grid-column: 1 / span 5;
+		max-width: 100%;
+		margin-inline: auto;
+	}
+	// Only the figure is width: auto. An image keeps the width Pattern Dump writes as its attribute:
+	// sizes="auto, …" on lazy images is resolved from the image's laid-out width, and with width: auto
+	// it falls back to 300px. Capped by max-width, the image is its own width, as Hugo's were at their
+	// natural size.
+	figure{
+		width: auto;
+	}
+
+}

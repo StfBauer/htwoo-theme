@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Badges",
+  "description": "Badges in one row, as one paragraph: each a child <pd-components-badge> tag.",
+  "type": "object",
+  "required": ["badges"],
+  "properties": {
+    "badges": { "type": "array", "description": "The badges, in order", "items": { "x-pd-component": "components/badge" } }
+  }
+}

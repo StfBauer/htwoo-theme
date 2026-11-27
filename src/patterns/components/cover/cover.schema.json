@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cover",
+  "description": "A wide image with the page's heading over it, as the home page opens.",
+  "type": "object",
+  "required": ["image", "alt", "title"],
+  "properties": {
+    "image": {
+      "type": "string",
+      "description": "The image, a raster file in the assets",
+      "x-pd-image": { "widths": [640, 1280, 1920], "sizes": "(min-width: 1025px) calc(100vw - 15rem), 100vw" }
+    },
+    "alt": { "type": "string", "description": "The image's text alternative" },
+    "title": { "type": "string", "description": "The heading over the image (the page's h1)" },
+    "subtitle": { "type": "string", "description": "A smaller line under the heading" }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  // For `npm run typecheck`. `pd dev` compiles src/scripts itself, and esbuild builds helpers/ to
+  // dist/helpers.js (npm run build:helpers). Self-contained: it extends nothing.
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["node"],
+    "strict": false,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  "include": ["src/scripts", "helpers"]
+}

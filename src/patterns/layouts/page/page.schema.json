@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Page",
+  "description": "The layout of a content page, and of every page that names no other. Its properties are what a page's frontmatter may set.",
+  "type": "object",
+  "x-pd-prose-images": { "widths": [480, 960, 1440, 1920], "sizes": "(min-width: 1025px) calc(100vw - 20rem), 100vw" },
+  "required": ["title"],
+  "properties": {
+    "title": { "type": "string", "description": "The page's heading, and its title in the navigation, listings and search results" },
+    "description": { "type": "string", "description": "The page's description for search results and link previews; without it, the site's" }
+  }
+}

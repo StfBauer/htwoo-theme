@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Home",
+  "description": "The home page: the cover, then the landing text, closed by the supporters.",
+  "type": "object",
+  "x-pd-prose-images": { "widths": [480, 960, 1440, 1920], "sizes": "(min-width: 1025px) calc(100vw - 20rem), 100vw" },
+  "required": ["title", "coverImage", "coverAlt", "coverTitle"],
+  "properties": {
+    "title": { "type": "string", "description": "The page's title in the browser and in search results (the cover's heading is coverTitle)" },
+    "description": { "type": "string", "description": "The site's description for search results and link previews" },
+    "coverImage": {
+      "type": "string",
+      "description": "The cover image, a raster file in the assets",
+      "x-pd-image": { "widths": [640, 1280, 1920], "sizes": "(min-width: 1025px) calc(100vw - 15rem), 100vw" }
+    },
+    "coverAlt": { "type": "string", "description": "The cover image's text alternative" },
+    "coverTitle": { "type": "string", "description": "The heading over the cover (the page's h1)" },
+    "coverSubtitle": { "type": "string", "description": "The smaller line under the heading" }
+  }
+}

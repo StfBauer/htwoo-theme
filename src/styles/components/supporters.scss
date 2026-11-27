@@ -1,0 +1,51 @@
+// The supporters list (components/supporters). Formerly 02-molecules/_sponsors.scss, with
+// .sponsor and .sponsor-link now in supporter.scss.
+.sponsors{
+	display: grid;
+
+	margin-top: 5rem;
+	padding: clamp(16px, 2vw, 24px);
+
+	gap: max(1rem, 2vw);
+	grid-auto-rows: 1fr;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto auto;
+
+	@media screen and (max-width: 768px){
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.ql-sponsors{
+	@extend .sponsors;
+
+	grid-template-columns: repeat(6, 1fr);
+
+	.landing &{
+		grid-template-columns: repeat(4, 1fr);
+		padding: 0;
+		@media screen and (max-width: 768px){
+			grid-template-columns: repeat(1, 1fr);
+		}	
+	}
+
+	margin-top: 2vw;
+	@media screen and (max-width: 1440px){
+		grid-template-columns: repeat(3, 1fr);
+	}
+	@media screen and (max-width: 768px){
+        grid-template-columns: repeat(1, 1fr);
+    }
+	.sponsor{
+		svg{
+			max-height: 4rem;
+		}
+	}
+}
+
+.sponsor-header{
+	grid-column: 1 / -1;
+	h3{
+		margin: 0;
+	}
+}

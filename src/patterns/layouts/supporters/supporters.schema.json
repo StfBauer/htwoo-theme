@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Supporters",
+  "description": "The supporters page: its title and text, then every supporter's logo from site.supporters.",
+  "type": "object",
+  "required": ["title"],
+  "properties": {
+    "title": { "type": "string", "description": "The page's heading, and its title in the navigation" },
+    "description": { "type": "string", "description": "The page's description for search results and link previews" }
+  }
+}
