@@ -12,12 +12,10 @@
 .header-nav {
 	@extend %baseMenu;
 
-	overflow: hidden;
-	overflow-y: auto;
+	// The menu scrolls with the page: the frame grows with its menu, with no scroll area of its own.
 	justify-content: flex-start;
 
-	height: 100%;
-	max-height: 100%;
+	flex: 1 0 auto;
 	// border-right: 1px lime solid;
 
 	transition: all .5s ease-out;
@@ -65,12 +63,10 @@
 	}
 
 	.menu-item {
-		position: sticky;
-		top: 0;
-
 		background: rgba(240, 240, 240, 1);
 	}
 
+	// The open menu on a narrow screen: below the header bar, as long as its entries, scrolling with the page.
 	&[aria-expanded="true"] {
 
 		position: absolute;
@@ -79,27 +75,16 @@
 		left: 0;
 
 		display: block;
-		overflow: hidden;
-		overflow-y: scroll;
 
 		box-sizing: border-box;
 
-		height: calc(100vh - 4rem);
 		padding: 2rem;
 
 		border-top: 1px solid currentColor;
 		background: rgba(240, 240, 240, 1);
 
 		.menu-item {
-			// font-size: clamp(2rem, 5vw, 5rem);
-			position: unset;
-
 			text-align: left;
-		}
-
-		&>.menu-item {
-			position: sticky;
-			top: 0;
 		}
 
 		.menu-link {
