@@ -2,12 +2,13 @@
 // document defaults every page shares. Formerly the Hugo theme's assets/sass/main.scss.
 @use './design-token.vars' as dt;
 @use './design-token';
+@use './fonts';
 @use './typography';
 @use './code';
 @use './article';
 
 body {
-  font-family: "Gotham A", "Gotham B", sans-serif;
+  font-family: var(--font-prim);
   font-weight: 400;
   font-kerning: normal;
   text-rendering: optimizeLegibility;
