@@ -12,22 +12,24 @@
 .header-nav {
 	@extend %baseMenu;
 
-	// The menu scrolls with the page: the frame grows with its menu, with no scroll area of its own.
+	// The menu's own scroll area: it fills the sidebar below the logo and scrolls when the menu is longer
+	// (large text), without passing the scroll on to the page at its ends.
 	justify-content: flex-start;
 
-	flex: 1 0 auto;
-	// border-right: 1px lime solid;
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow-y: auto;
+	overscroll-behavior: contain;
 
 	transition: all .5s ease-out;
 
-	border: 1px #fff solid;
+	border: .0625rem #fff solid;
 	border-radius: .25rem;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 	background-color: rgba(#f0f0f0, .8);
-	box-shadow: rgba(0, 0, 0, .125) 0 32px 64px;
+	box-shadow: rgba(0, 0, 0, .125) 0 2rem 4rem;
 
-	filter: background-blur(10px);
 	grid-column: 1 / span 1;
 	padding-block: 2rem;
 	padding-inline: clamp(1rem, 2vw, 1.5rem);
@@ -38,6 +40,7 @@
 		justify-content: flex-end;
 
 		height: 3rem;
+		overflow: visible;
 
 		align-items: center;
 		grid-column: 2 / span 4;
@@ -66,7 +69,8 @@
 		background: rgba(240, 240, 240, 1);
 	}
 
-	// The open menu on a narrow screen: below the header bar, as long as its entries, scrolling with the page.
+	// The open menu on a narrow screen: below the header bar, at most the rest of the viewport high, scrolling on
+	// its own without passing the scroll on to the page at its ends.
 	&[aria-expanded="true"] {
 
 		position: absolute;
@@ -75,12 +79,16 @@
 		left: 0;
 
 		display: block;
+		overflow-y: auto;
+		overscroll-behavior: contain;
 
 		box-sizing: border-box;
+		max-height: calc(100vh - 4rem);
+		max-height: calc(100dvh - 4rem);
 
 		padding: 2rem;
 
-		border-top: 1px solid currentColor;
+		border-top: .0625rem solid currentColor;
 		background: rgba(240, 240, 240, 1);
 
 		.menu-item {
@@ -195,7 +203,7 @@ span.menu-link{
 	.menu-item {
 		
 
-		border-left: 1px var(--c-text) solid;
+		border-left: .0625rem var(--c-text) solid;
 		margin-left: 0em;
 
 		&.active {
