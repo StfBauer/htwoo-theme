@@ -8,7 +8,8 @@
 	min-height: 100vh;
 
 	gap: max(2rem, 3vw);
-	grid-template-columns: minmax(250px, 15vw) auto;
+	// The menu column grows with the text size (rem), so its entries fit at 200 % text.
+	grid-template-columns: minmax(15.625rem, 15vw) auto;
 	@media screen and (max-width: 1024px){
 		grid-template-columns: repeat(5, 1fr);
 		grid-template-rows: 3rem auto;

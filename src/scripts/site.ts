@@ -25,8 +25,8 @@ const toggleMenu = (event) => {
         hamMenu.setAttribute('aria-expanded', isExpanded.toString());
         event.currentTarget.setAttribute('aria-expanded', isExpanded.toString());
 
-        // Block scroll when menu is expanded
-        document.body.style.overflow = isExpanded ? 'hidden' : null;
+        // The open menu scrolls with the page (the header bar lets go of the top), so it opens at the top.
+        if (isExpanded) window.scrollTo({ top: 0 });
     }
 }
 
