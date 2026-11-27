@@ -1,4 +1,10 @@
 :root {
+    /** the primary font: htwoo.io's Gotham SSm (both halves of the project), its metric-matched fallbacks
+        (_fonts.scss), then the system stack **/
+    --font-prim: "Gotham SSm A", "Gotham SSm B", "Gotham Fallback", "Gotham Fallback Bold", "Gotham Fallback Roboto",
+        system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
+
     /** neutral colors **/
     --c-n-10: hsl(0, 0%, 100%);
     --c-n-20: hsl(0, 0%, 90.98%);

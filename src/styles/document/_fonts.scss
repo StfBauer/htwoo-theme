@@ -1,0 +1,104 @@
+// Metric-matched fallbacks for htwoo.io's Gotham SSm (typography.com font project 889032, linked in
+// partials/head), so text laid out before the web fonts arrive barely moves when they swap in. Used by --font-prim
+// (_design-token.scss). The setup of n8d.at's style guide, measured for Gotham SSm, which runs wider than Gotham.
+//
+// size-adjust = Gotham SSm text width ÷ local font width, per weight; the overrides are Gotham SSm's ascent and
+// descent (96 and 24 per 100px) ÷ size-adjust. Measured in Chrome on htwoo.io's article text with both the A and
+// B fonts in the stack, because the project splits its glyphs across them. Roboto is measured, but not on an
+// Android device. Re-measure if the fonts change.
+//
+// The project serves Gotham SSm in 400, 400 italic, 500, 700 and 800; the theme's 600 renders as 700 and its 900
+// as 800, so the fallback faces cover those ranges.
+
+@font-face {
+  font-family: "Gotham Fallback";
+  src: local("Arial"), local("ArialMT"), local("Helvetica"), local("Helvetica Neue");
+  font-weight: 400;
+  size-adjust: 115.7%;
+  ascent-override: 82.9%;
+  descent-override: 20.7%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Gotham Fallback";
+  src: local("Arial"), local("ArialMT"), local("Helvetica"), local("Helvetica Neue");
+  font-weight: 500;
+  size-adjust: 116.4%;
+  ascent-override: 82.5%;
+  descent-override: 20.6%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Gotham Fallback";
+  src: local("Arial Bold"), local("Arial-BoldMT"), local("Helvetica Bold"), local("Helvetica-Bold");
+  font-weight: 600 700;
+  size-adjust: 111.8%;
+  ascent-override: 85.9%;
+  descent-override: 21.5%;
+  line-gap-override: 0%;
+}
+
+// Headings and the site title use 800 and 900, so a bold fallback visibly jumps when the web font arrives.
+@font-face {
+  font-family: "Gotham Fallback";
+  src: local("Arial Black"), local("Arial-Black");
+  font-weight: 800 900;
+  size-adjust: 99.5%;
+  ascent-override: 96.4%;
+  descent-override: 24.1%;
+  line-gap-override: 0%;
+}
+
+// For systems without Arial Black (iOS).
+@font-face {
+  font-family: "Gotham Fallback Bold";
+  src: local("Arial Bold"), local("Arial-BoldMT"), local("Helvetica Bold"), local("Helvetica-Bold");
+  font-weight: 800 900;
+  size-adjust: 111.6%;
+  ascent-override: 86%;
+  descent-override: 21.5%;
+  line-gap-override: 0%;
+}
+
+// For systems without Arial (Android).
+@font-face {
+  font-family: "Gotham Fallback Roboto";
+  src: local("Roboto"), local("Roboto-Regular");
+  font-weight: 400;
+  size-adjust: 111.4%;
+  ascent-override: 86.2%;
+  descent-override: 21.5%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Gotham Fallback Roboto";
+  src: local("Roboto Medium"), local("Roboto-Medium");
+  font-weight: 500;
+  size-adjust: 111.4%;
+  ascent-override: 86.2%;
+  descent-override: 21.6%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Gotham Fallback Roboto";
+  src: local("Roboto Bold"), local("Roboto-Bold");
+  font-weight: 600 700;
+  size-adjust: 112.6%;
+  ascent-override: 85.3%;
+  descent-override: 21.3%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Gotham Fallback Roboto";
+  src: local("Roboto Black"), local("Roboto-Black");
+  font-weight: 800 900;
+  size-adjust: 111.8%;
+  ascent-override: 85.9%;
+  descent-override: 21.5%;
+  line-gap-override: 0%;
+}
